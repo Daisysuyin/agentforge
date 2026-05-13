@@ -6,7 +6,7 @@
 
 Live agentic round trip: orchestrator classifies the request → routes to the Sales SDR agent → Gemma 4 generates a structured tool call → AgentForge dispatches `create_lead` to SQLite → a natural-language summary streams back. End-to-end in ~1.1 seconds.
 
-<!-- Drag demo.mp4 onto this line in the GitHub web editor; GitHub will replace this comment with an inline video player. -->
+![AgentForge live demo — Gemma 4 26B-A4B on DGX Spark creating a CRM lead via tool calling](docs/demo.gif)
 
 AgentForge is a from-scratch take on Salesforce's Agentforce: a workbench where you can author agents (system prompt + tools + guardrails), test them in a streaming playground, route to them via a classifier-driven orchestrator, and evaluate them against a fixture suite. The agent runtime is provider-agnostic — the same code targets Anthropic's API, a self-hosted vLLM endpoint, or a deterministic mock used for tests.
 
