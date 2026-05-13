@@ -307,6 +307,8 @@ agentforge/
 │       │   ├── AgentBuilder.tsx GraphQL CRUD
 │       │   └── TracesEval.tsx   Eval runner + trace browser
 │       └── styles.css           Dev-console aesthetic, JetBrains Mono + Manrope
+├── docs/
+│   └── demo.gif                 Live demo: orchestrator → tool call → SQL write → LLM summary
 └── traces/
     └── sample_traces.json       Eval fixtures
 ```
