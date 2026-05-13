@@ -29,3 +29,6 @@ dist/
 .env
 .env.local
 *.bak
+
+# Demo video — uploaded via GitHub web UI
+docs/*.mp4
