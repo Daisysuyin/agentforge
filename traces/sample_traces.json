@@ -1,0 +1,66 @@
+[
+  {
+    "case_id": "tc-01-create-lead-basic",
+    "agent_name": "Sales SDR",
+    "user_input": "Create a new lead for Sarah Chen at Northwind Solutions, source LinkedIn.",
+    "expected_tools": ["create_lead"],
+    "expected_text_contains": ["lead"],
+    "judge_rubric": "Did the agent successfully create a lead with the right name and company?"
+  },
+  {
+    "case_id": "tc-02-find-contact-by-email",
+    "agent_name": "Sales SDR",
+    "user_input": "Find the contact with email anna@globex.example",
+    "expected_tools": ["find_contact"],
+    "expected_text_contains": [],
+    "judge_rubric": "Did the agent search by email and report what it found?"
+  },
+  {
+    "case_id": "tc-03-advance-opportunity",
+    "agent_name": "Sales SDR",
+    "user_input": "Advance the opportunity Globex Renewal to the next stage.",
+    "expected_tools": ["advance_opportunity_stage"],
+    "expected_text_contains": [],
+    "judge_rubric": "Did the agent call advance_opportunity_stage on the right opportunity?"
+  },
+  {
+    "case_id": "tc-04-pricing-question",
+    "agent_name": "Customer Service",
+    "user_input": "Search the knowledge base: what tiers do we offer?",
+    "expected_tools": ["search_knowledge_base"],
+    "expected_text_contains": [],
+    "judge_rubric": "Did the agent search KB and reference pricing tiers?"
+  },
+  {
+    "case_id": "tc-05-refund-policy",
+    "agent_name": "Customer Service",
+    "user_input": "Search the knowledge base for our refund policy.",
+    "expected_tools": ["search_knowledge_base"],
+    "expected_text_contains": [],
+    "judge_rubric": "Did the agent return the refund policy from the KB?"
+  },
+  {
+    "case_id": "tc-06-create-lead-no-company",
+    "agent_name": "Sales SDR",
+    "user_input": "Create a lead for John Smith.",
+    "expected_tools": ["create_lead"],
+    "expected_text_contains": [],
+    "judge_rubric": "Did the agent create the lead, possibly inferring or asking for company?"
+  },
+  {
+    "case_id": "tc-07-find-contact-by-name",
+    "agent_name": "Sales SDR",
+    "user_input": "Find me the contact named Anna.",
+    "expected_tools": ["find_contact"],
+    "expected_text_contains": [],
+    "judge_rubric": "Did the agent search by name and return matches?"
+  },
+  {
+    "case_id": "tc-08-knowledge-discount",
+    "agent_name": "Customer Service",
+    "user_input": "Search the knowledge base: what discounts can an AE approve?",
+    "expected_tools": ["search_knowledge_base"],
+    "expected_text_contains": [],
+    "judge_rubric": "Did the agent answer the discount approval threshold from KB?"
+  }
+]
