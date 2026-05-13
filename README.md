@@ -341,4 +341,4 @@ A handful of bugs caught and fixed in development, kept here so the next person 
 
 ## License
 
-MIT.
+MIT — see [LICENSE](LICENSE) for the full text. Copyright (c) 2026 Yin Su.
