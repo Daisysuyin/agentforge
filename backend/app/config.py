@@ -28,6 +28,9 @@ class Settings(BaseSettings):
     max_tool_calls_per_turn: int = 10
     agent_timeout_seconds: float = 60.0
 
+    # Unsafe demonstration-only endpoint; never enable on an internet-facing host.
+    enable_demo_reset: bool = False
+
     # CORS
     cors_origins: list[str] = ["http://localhost:5173", "http://127.0.0.1:5173"]
 

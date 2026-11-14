@@ -135,6 +135,16 @@ Every span — orchestrator routing, tool dispatch, tool result, natural-languag
 
 ---
 
+## Security and deployment status
+
+**AgentForge is a local-development / portfolio prototype, not a multi-tenant production service.** Its GraphQL mutations and chat endpoints currently have no end-user authentication or authorization. Do **not** expose the FastAPI application or database directly to the public internet or use real customer data.
+
+The destructive `POST /admin/reset` route is **disabled by default**. For local demo data only, set `ENABLE_DEMO_RESET=true` and send requests from the loopback interface; requests from other client addresses are rejected. This opt-in is not a substitute for production authentication.
+
+CI runs the deterministic mock-provider backend tests and frontend build. It does **not** validate the external Anthropic endpoint, DGX Spark / vLLM deployment, performance measurements, production security, or operational availability. See [Security](SECURITY.md) for more detail.
+
+---
+
 ## Quick start (local)
 
 Requires Python 3.11+, Node 18+. By default uses the deterministic mock LLM — no API key or GPU required.

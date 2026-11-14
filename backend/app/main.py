@@ -94,8 +94,12 @@ async def chat_stream(agent_id: str, request: Request, message: str):
 
 
 @app.post("/admin/reset")
-async def admin_reset() -> dict[str, str]:
-    """Drop and recreate all tables, then re-seed. v0 admin convenience."""
+async def admin_reset(request: Request) -> dict[str, str]:
+    """Local-only demo reset; disabled by default and never available remotely."""
+    if not settings.enable_demo_reset:
+        raise HTTPException(status_code=404, detail="Not found")
+    if request.client is None or request.client.host not in {"127.0.0.1", "::1"}:
+        raise HTTPException(status_code=403, detail="Demo reset requires a loopback client")
     from app.db import Base, engine
     from app.seed import seed_all
 
